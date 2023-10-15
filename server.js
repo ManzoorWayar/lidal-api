@@ -206,7 +206,7 @@ app.get("/api/room-exists/:roomId", (req, res) => {
 app.get("/api/get-turn-credentials", (req, res) => {
     console.log(123);
     const accountSid = "AC0d3670d90966e37f232399829dfbe4cd";
-    const authToken = "9679eeee0f0714acc88c9e8b26b546e2";
+    const authToken = "0caab504a75dd93883112cf02d55ded2";
 
     const client = twilio(accountSid, authToken);
 
