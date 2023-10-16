@@ -192,7 +192,7 @@ app.get("/api/room-exists/:roomId", (req, res) => {
 
     if (room) {
         // send reponse that room exists
-        if (room.connectedUsers.length > 3) {
+        if (room.connectedUsers.length > 20) {
             return res.send({ roomExists: true, full: true });
         } else {
             return res.send({ roomExists: true, full: false });
@@ -204,7 +204,7 @@ app.get("/api/room-exists/:roomId", (req, res) => {
 });
 
 app.get("/api/get-turn-credentials", (req, res) => {
-    console.log(123);
+
     const accountSid = "AC0d3670d90966e37f232399829dfbe4cd";
     const authToken = "0caab504a75dd93883112cf02d55ded2";
 
@@ -212,7 +212,7 @@ app.get("/api/get-turn-credentials", (req, res) => {
 
     try {
         client.tokens.create().then((token) => {
-            console.log({ token });
+            // console.log({ token });
             res.send({ token });
         });
     } catch (err) {
